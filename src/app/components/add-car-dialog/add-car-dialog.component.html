@@ -1,0 +1,25 @@
+<div class="add-car-dialog-container">
+  <span class="dialog-title">Voeg auto met route toe</span>
+  <mat-form-field>
+    <mat-label>Kenteken</mat-label>
+    <mat-select [(ngModel)]="this.route.car">
+      <mat-option *ngFor="let car of cars" [value]="car">
+        {{car.licensePlateNumber}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Startlocatie</mat-label>
+    <input matInput [(ngModel)]="this.route.origin">
+    <mat-hint>Bijvoorbeeld: Piusstraat 12, Tilburg</mat-hint>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Eindlocatie</mat-label>
+    <input matInput [(ngModel)]="this.route.destination">
+    <mat-hint>Bijvoorbeeld: Stationslaan 59, Breda</mat-hint>
+  </mat-form-field>
+  <div class="action-bar">
+    <button mat-button (click)="onCancelClick()" color="warn">Annuleren</button>
+    <button mat-button (click)="onAddClick()" color="primary">Toevoegen</button>
+  </div>
+</div>
