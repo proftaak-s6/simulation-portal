@@ -34,7 +34,7 @@ export class SidebarComponent implements OnInit {
     dialogRef.afterClosed().subscribe((route: Route) => {
       if (route && route.car.id && route.origin.length > 0 && route.origin.length > 0) {
         const sim: SimulationInput = new SimulationInput(
-          route.car.id,
+          route.car.tracker.id,
           route.origin,
           route.destination
         );
